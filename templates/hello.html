@@ -1,0 +1,22 @@
+<body>
+  <!--
+  <script>
+  var isTina = prompt("Is your name Tina Wong?")
+</script> -->
+  <h1>Welcome to my page!</h1>
+  {% if user %}
+    Hello {{ user }}! <br><br>
+    {% if account %}
+      Your username is: {{ account.user }}
+      Your email is: {{ account.email }}
+      Your password is: {{ account.password }}
+    {% else %}
+      <form action="{{ url_for('account_query') }}" method="GET">
+        Click below to see your username, password, and email!<br>
+        <input type="submit" value="Submit">
+      </form>
+    {% endif %}
+  {% else %}
+    This is a password-protected site, please login to continue!
+  {% endif %}
+</body>

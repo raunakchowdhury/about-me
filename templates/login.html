@@ -1,0 +1,28 @@
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='form.css')}}">
+</head>
+<body>
+  <div class="forms">
+    Welcome to my website! Please create an account to continue or sign in:<br><br>
+    Create an account: <br><br>
+      <form action="{{ url_for('create_account') }}" method="POST">
+        Username: <br>
+        <input type="text" name="user"><br>
+        Email: <br>
+        <input type="text" name="email"><br>
+        Password: <br>
+        <input type="text" name="password"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+    Log In: <br><br>
+      <form action="{{ url_for('login') }}" method="POST">
+        Username: <br>
+        <input type="text" name="user"><br>
+        Email: <br>
+        <input type="text" name="email"><br>
+        Password: <br>
+        <input type="text" name="password"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+</body>
